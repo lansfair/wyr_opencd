@@ -4,7 +4,7 @@ import os
 from typing import Any
 
 from mmengine.dataset import BaseDataset
-from mmseg.registry import DATASETS
+from opencd.registry import DATASETS
 
 from ..utils import CROP_TYPE_CLASSES, CROP_TYPE_PALETTE
 

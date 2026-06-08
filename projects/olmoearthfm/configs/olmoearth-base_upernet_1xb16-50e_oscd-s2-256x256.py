@@ -41,4 +41,8 @@ default_hooks = dict(
         rule='greater',
         save_last=True),
     logger=dict(type='LoggerHook', interval=50, log_metric_by_epoch=True),
-    visualization=dict(type='CDVisualizationHook', interval=1, draw=True, show=False))
+    visualization=dict(
+        type='OlmoEarthOSCDVisualizationHook',
+        interval=1,
+        draw=True,
+        show=False))

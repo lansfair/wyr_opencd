@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import torch
-from mmseg.registry import MODELS
+from opencd.registry import MODELS
 from torch import Tensor, nn
 from torch.nn import functional as F
 

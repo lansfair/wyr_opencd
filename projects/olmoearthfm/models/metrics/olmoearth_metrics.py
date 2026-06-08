@@ -7,7 +7,7 @@ import numpy as np
 import torch
 from mmengine.evaluator import BaseMetric
 from mmengine.logging import MMLogger, print_log
-from mmseg.registry import METRICS
+from opencd.registry import METRICS
 from prettytable import PrettyTable
 
 

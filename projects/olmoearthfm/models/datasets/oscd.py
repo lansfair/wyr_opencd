@@ -255,6 +255,7 @@ class OSCD_Dataset(_BaseCDDataset):
                     self._get_band_paths(images_root, region, 2)
                 ],
                 seg_map_path=mask,
+                sample_id=region,
                 label_map=self.label_map,
                 format_seg_map=self.format_seg_map,
                 reduce_zero_label=self.reduce_zero_label,

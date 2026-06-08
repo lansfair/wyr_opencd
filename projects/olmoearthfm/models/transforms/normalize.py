@@ -4,7 +4,7 @@ from typing import Any
 
 import numpy as np
 from mmcv.transforms import BaseTransform
-from mmseg.registry import TRANSFORMS
+from opencd.registry import TRANSFORMS
 
 from ..utils import RGB_TO_SENTINEL2_L2A, get_modality_bands
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from mmengine.dataset import BaseDataset
-from mmseg.registry import DATASETS
+from opencd.registry import DATASETS
 
 from ..utils import (
     AWF_CLASSES,

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from mmseg.models.decode_heads.decode_head import BaseDecodeHead
 from mmseg.models.utils import resize
-from mmseg.registry import MODELS
+from opencd.registry import MODELS
 from torch import Tensor, nn
 
 from .valid_mask_mixin import ValidMaskLossMixin

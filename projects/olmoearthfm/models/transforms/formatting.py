@@ -5,7 +5,7 @@ from typing import Any
 import numpy as np
 from mmcv.transforms import BaseTransform, to_tensor
 from mmengine.structures import PixelData
-from mmseg.registry import TRANSFORMS
+from opencd.registry import TRANSFORMS
 from mmseg.structures import SegDataSample
 
 

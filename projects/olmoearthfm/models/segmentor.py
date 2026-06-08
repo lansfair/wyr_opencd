@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import List
 
 from mmseg.models.segmentors.encoder_decoder import EncoderDecoder
-from mmseg.registry import MODELS
+from opencd.registry import MODELS
 from mmseg.utils import OptSampleList, SampleList
 from torch import Tensor
 

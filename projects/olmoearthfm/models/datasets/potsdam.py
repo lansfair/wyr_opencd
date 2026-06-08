@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from mmseg.datasets import PotsdamDataset
-from mmseg.registry import DATASETS
+from opencd.registry import DATASETS
 
 
 @DATASETS.register_module()

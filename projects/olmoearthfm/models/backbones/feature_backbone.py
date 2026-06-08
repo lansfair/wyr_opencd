@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from mmengine.model import BaseModule
-from mmseg.registry import MODELS
+from opencd.registry import MODELS
 from torch import Tensor
 
 

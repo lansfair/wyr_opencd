@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import torch.nn.functional as F
 from mmseg.models.data_preprocessor import SegDataPreProcessor
-from mmseg.registry import MODELS
+from opencd.registry import MODELS
 
 
 @MODELS.register_module()

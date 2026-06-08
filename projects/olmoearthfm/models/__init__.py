@@ -4,7 +4,7 @@ from .datasets import DATASET_METAINFO, GeoBenchS2SegDataset
 from .datasets import OlmoEarthPotsdamDataset
 from .datasets import OlmoEarthSegDataset
 from .decode_heads import OlmoEarthLinearHead, OlmoEarthPatchLinearHead
-from .hooks import FreezeBackboneUntilEpochHook, OlmoEarthVisualizationHook
+from .hooks import FreezeBackboneUntilEpochHook, OlmoEarthOSCDVisualizationHook
 from .losses import ValidMaskCrossEntropyLoss
 from .metrics import OlmoEarthAccuracyMetric, OlmoEarthIoUMetric
 from .segmentor import OlmoEarthEncoderDecoder
@@ -44,7 +44,7 @@ __all__ = [
     "OlmoEarthRandomFlip",
     "OlmoEarthSegDataset",
     "PackOlmoEarthSegInputs",
-    "OlmoEarthVisualizationHook",
+    "OlmoEarthOSCDVisualizationHook",
     "RGBToOlmoEarthS2",
     "ValidMaskCrossEntropyLoss",
 ]

@@ -4,7 +4,7 @@ from typing import Any
 
 import numpy as np
 from mmcv.transforms import BaseTransform
-from mmseg.registry import TRANSFORMS
+from opencd.registry import TRANSFORMS
 
 
 def _seg_fields(results: dict[str, Any]) -> list[str]:
