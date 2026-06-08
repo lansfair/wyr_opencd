@@ -44,6 +44,7 @@ class CDVisualizationHook(SegVisualizationHook):
             CDLocalVisualizer.get_current_instance()
         self.interval = interval
         self.show = show
+        self._test_index = 0
         if self.show:
             # No need to think about vis backends.
             self._visualizer._vis_backends = {}
@@ -83,20 +84,26 @@ class CDVisualizationHook(SegVisualizationHook):
 
             for output in outputs:
                 img_path = output.img_path[0]
+                if isinstance(img_path, (list, tuple)):
+                    img_path = img_path[0]
                 img_from_to = []
-                window_name = osp.basename(img_path).split('.')[0]
-                if self.img_shape is not None:
-                    assert len(self.img_shape) == 3, \
-                        '`img_shape` should be (H, W, C)'
-                else:
-                    img_bytes = fileio.get(
-                        img_path, backend_args=self.backend_args)
-                    img = mmcv.imfrombytes(img_bytes, channel_order='rgb')
-                    self.img_shape = img.shape
+                city_name = osp.basename(osp.dirname(osp.dirname(img_path)))
+                # window_name = osp.basename(img_path).split('.')[0]
+                window_name = city_name
+                # if self.img_shape is not None:
+                #     assert len(self.img_shape) == 3, \
+                #         '`img_shape` should be (H, W, C)'
+                # else:
+                img_bytes = fileio.get(
+                    img_path, backend_args=self.backend_args)
+                img = mmcv.imfrombytes(img_bytes, channel_order='rgb')
+                self.img_shape = img.shape
 
                 if self.draw_on_from_to_img:
                     # for semantic change detection
                     for _img_path in output.img_path:
+                        if isinstance(_img_path, (list, tuple)):
+                            _img_path = _img_path[0]
                         _img_bytes = fileio.get(
                             _img_path, backend_args=self.backend_args)
                         _img = mmcv.imfrombytes(_img_bytes, channel_order='rgb')

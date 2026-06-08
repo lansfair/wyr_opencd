@@ -123,6 +123,8 @@ class SiamEncoderDecoder(BaseSegmentor):
     def extract_feat(self, inputs: Tensor) -> List[Tensor]:
         """Extract features from images."""
         # `in_channels` is not in the ATTRIBUTE for some backbone CLASS.
+        # print(inputs.shape)
+        # print(self.backbone_inchannels)
         img_from, img_to = torch.split(inputs, self.backbone_inchannels, dim=1)
         feat_from = self.backbone(img_from)
         feat_to = self.backbone(img_to)
