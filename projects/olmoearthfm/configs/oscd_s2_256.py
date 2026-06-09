@@ -1,6 +1,10 @@
 dataset_type = 'OSCD_Dataset'
 data_root = '/mnt/ht2-nas2/EO_test/wry/Copernicus/Data/OSCD/'
 crop_size = (256, 256)
+meta_keys = (
+    'img_path', 'seg_map_path', 'seg_map_path_from', 'seg_map_path_to',
+    'ori_shape', 'img_shape', 'pad_shape', 'scale_factor', 'flip',
+    'flip_direction', 'sample_id')
 
 s2_band_stats = dict(
     mean=[
@@ -52,7 +56,7 @@ test_pipeline = [
         mean=s2_band_stats['mean'],
         std=s2_band_stats['std']),
     dict(type='MultiImgLoadOSCDAnnotations'),
-    dict(type='MultiImgPackSegInputs')
+    dict(type='MultiImgPackSegInputs', meta_keys=meta_keys)
 ]
 
 train_dataloader = dict(
